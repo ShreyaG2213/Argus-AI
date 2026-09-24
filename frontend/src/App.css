@@ -292,3 +292,62 @@ footer {
   text-align: center;
   color: #9aa9bc;
 }
+/* Threat Summary */
+
+.summary-card {
+  background: #111923;
+  border: 1px solid #263445;
+  border-radius: 18px;
+  padding: 32px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.summary-card h3 {
+  font-size: 28px;
+  margin-bottom: 28px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.summary-item {
+  background: #18222e;
+  border: 1px solid #263445;
+  border-radius: 14px;
+  padding: 22px 12px;
+}
+
+.summary-item span {
+  display: block;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.summary-item strong {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.summary-item p {
+  margin: 0;
+  color: #8fa6c0;
+  font-size: 15px;
+}
+/* Responsive Threat Summary */
+
+@media (max-width: 900px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -105,6 +105,42 @@ function App() {
                 </p>
               )}
             </section>
+            {/* Threat Summary */}
+<section className="summary-card">
+  <h3>Threat Summary</h3>
+
+  <div className="summary-grid">
+    <div className="summary-item">
+      <span>📹</span>
+      <strong>
+        {data.events.filter((event) => event.source === "CCTV").length}
+      </strong>
+      <p>CCTV Events</p>
+    </div>
+
+    <div className="summary-item">
+      <span>🚪</span>
+      <strong>
+        {data.events.filter((event) => event.source === "ACCESS_LOG").length}
+      </strong>
+      <p>Access Events</p>
+    </div>
+
+    <div className="summary-item">
+      <span>🌐</span>
+      <strong>
+        {data.events.filter((event) => event.source === "NETWORK").length}
+      </strong>
+      <p>Network Events</p>
+    </div>
+
+    <div className="summary-item">
+      <span>📊</span>
+      <strong>{data.events.length}</strong>
+      <p>Total Events</p>
+    </div>
+  </div>
+</section>
             {/* Analyzed Security Events */}
 <section className="events-card">
   <h3>Analyzed Security Events</h3>
