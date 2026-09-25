@@ -171,6 +171,39 @@ function App() {
     </p>
   )}
 </section>
+{/* Cross-Source Threat Correlation */}
+<section className="correlation-card">
+  <h3>🔗 Cross-Source Threat Correlation</h3>
+
+  {data.correlated_incidents &&
+  data.correlated_incidents.length > 0 ? (
+    <div className="correlation-list">
+      {data.correlated_incidents.map((incident, index) => (
+        <div className="correlation-item" key={index}>
+          <div className="correlation-header">
+            <strong>
+              {incident.type.replaceAll("_", " ").toUpperCase()}
+            </strong>
+
+            <span className="correlation-badge">
+              CORRELATED
+            </span>
+          </div>
+
+          <p>{incident.description}</p>
+
+          <div className="correlation-sources">
+            Sources: {incident.sources.join(" + ")}
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <div className="no-correlation">
+      🟢 No cross-source incidents detected.
+    </div>
+  )}
+</section>
 
             {/* Event Sources */}
             <section className="sources-card">
